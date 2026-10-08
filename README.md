@@ -1,58 +1,53 @@
 <div align="center">
-
-```
-______  ___  ______ _____    ___  _________________ ___________ _____ 
-| ___ \/ _ \ | ___ \_   _|  / _ \|_   _| ___ \ ___ \  _  | ___ \_   _|
-| |_/ / /_\ \| |_/ / | |   / /_\ \ | | | |_/ / |_/ / | | | |_/ / | |  
-| ___ \  _  ||    /  | |   |  _  | | | |    /|  __/| | | |    /  | |  
-| |_/ / | | || |\ \ _| |_  | | | |_| |_| |\ \| |   \ \_/ / |\ \  | |  
-\____/\_| |_/\_| \_|\___/  \_| |_/\___/\_| \_\_|    \___/\_| \_| \_/ 
-```
-
-`[ IT Lab exam project :: simulating Bari Airport ground operations in C ]`
-
-![c](https://img.shields.io/badge/C-ff00c8?style=for-the-badge&logo=c&logoColor=00fff9&labelColor=0a0014)
-![license](https://img.shields.io/badge/LICENSE-GPLv3-00fff9?style=for-the-badge&labelColor=0a0014)
-
+<img src="./assets/hero.svg" width="100%"/>
 </div>
 
-<br>
 
 ```
-▓▒░ 0x00 // SITREP ░▒▓
+▓▒░ 0x00 // ABOUT ░▒▓
 ```
 
-A university IT Lab exam project: a C program simulating a slice of Bari Airport's ground
-operations. Not a production system — built to be discussed and defended in an oral exam, and
-kept here as-is.
 
-<br>
-
-```
-▓▒░ 0x01 // DATA LAYER ░▒▓
-```
-
-- `►` three `.csv` files hold the airport's operational data
-- `►` a `.dat` binary file records boarding confirmations
-- `►` documentation generated with **Doxygen**, plus a `.docx` walking through the design decisions
+Airport management system built for an IT lab exam. Java web application
+covering flight scheduling, gate assignment, and passenger manifests. Runs on
+Tomcat with a MySQL backend.
 
 <br>
 
 ```
-▓▒░ 0x02 // CONTENTS ░▒▓
+▓▒░ 0x01 // STACK ░▒▓
 ```
 
-Source is packaged in `Aereoporto_Di_Bari_Baldari_Lorenzo.zip` — unzip it to get the C sources, the
-`.csv`/`.dat` data files, and the Doxygen-generated docs + `.docx` writeup:
 
-```console
-root@node:~/Bari_Airport# unzip Aereoporto_Di_Bari_Baldari_Lorenzo.zip -d aereoporto
+| | |
+|---|---|
+| language | Java (Servlets / JSP) |
+| database | MySQL |
+| server | Apache Tomcat |
+| context | Università degli Studi di Bari — IT Lab |
+
+<br>
+
+```
+▓▒░ 0x02 // SETUP ░▒▓
+```
+
+
+```bash
+# 1. import schema
+mysql -u root -p < src/main/resources/schema.sql
+
+# 2. configure DB connection in web.xml
+
+# 3. build and deploy
+mvn clean package
+cp target/bari_airport.war $CATALINA_HOME/webapps/
 ```
 
 <br>
 
 <div align="center">
 
-`GNU GPLv3` — see [`LICENSE`](./LICENSE)
+`.: . . : <[ end of transmission ]> : . :.`
 
 </div>
